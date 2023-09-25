@@ -5,8 +5,6 @@ Designed and implemented by Duncan Mayer and Nancy Onyejiaka.
 
 IMPLEMENTATION DETAILS VERSION 3.0.0:
 
-UPDATED FOR ASSIGNMENT 6:
-
     HOW TO USE OUR PROGRAM:
     When designing the user interface for our program, user accessibility and ease of use were
     our highest priority whent came to making visual design choiced. As a result, most of the
@@ -39,26 +37,23 @@ UPDATED FOR ASSIGNMENT 6:
     Please consult the USEME for more detailed instructions on how to our program.
 
     WHAT'S COMPLETE:
-    Our program is fully complete per the assignment details.  Each feature we were asked to include
-    within our program has been included.  This includes, but is not limited to: creating a fully
-    functional GUI, creating a connection between Buttons pressed and their corresponding commands,
-    creating an updated Histogram with Pixel data pulled from the image being observed, the ability
-    to save and load an image through a file choosing system within the GUI, etc.  We also have
-    created a JAR file that can accept the 3 scripts necessary of it in the assignment details,
-    including the two we needed previously as well as the new one to open the GUI.
+    Our program involved: creating a fully functional GUI, creating a connection between Buttons
+    pressed and their corresponding commands, creating an updated Histogram with Pixel data pulled
+    from the image being observed, the ability to save and load an image through a file choosing
+    system within the GUI, etc.  We have also created a JAR file that can accept scripts, such as
+    one to open the GUI.
 
     DESIGN CHANGES AND JUSTIFICATION:
-    We made one notable change to our code from Assignments 4 and 5, that being combining the code
-    for saving and loading a PNG/JPG/BMP and the code for loading a PPM into one class.  Whereas
-    before we had these separated, it made more logical sense for this assignment for them to be
-    the same thing, in order to reduce the number of checks in other parts of our code for the
-    various file extensions.
+    We combined the code for saving and loading a PNG/JPG/BMP and the code for loading a PPM into
+    one class.  Whereas before we had these separated, it made more logical sense them to be the
+    same thing, in order to reduce the number of checks in other parts of our code for the various
+    file extensions.
 
     CITATIONS:
     One image that we used was a jpg of the painting "Eleanor" by Frank Weston Benson from the MFA.
     This image was obtained for free off of the MFA website, and is free for personal use as per
     the MFA website at https://www.mfa.org/collections/mfa-images/web-use-and-gallery-photography
-    We believe that using this image for this assignment constitutes personal or educational use,
+    We believe that using this image for this project constitutes personal or educational use,
     as no profit comes of us sharing this image.  This image is used in our screenshot showing how
     the GUI looks when running.
 
@@ -74,7 +69,7 @@ that it the model can be expanded upon if users wished to implement greater func
 
 Images are read and loaded into the program by the Load command, called by
 the controller when it receives the proper input String. Reading the PPM makes use of
-the provided code we got at the start of this assignment, with our own mods.
+the provided code we got at the start of this project, with our own mods.
 
 Various commands can be called on within the controller such as any of the color-component
 commands,either flip command, or brighten. These commands are implemented such that a copy is
@@ -123,12 +118,12 @@ together and dividing that sum by 3.  This allows a major reduction in code dupl
 such calculations to be representable by matrix multiplication, but as such it reduces accuracy by
 2 points on the pixel values.
 
-We decided to design our code for Assignment 2 such that instead of extending or implementing new
-Model implementations to add functionality, we instead added them to our IModel interface.  Our
-justification for this is that while these methods were used to reduce code duplication in old code,
-they do not limit or detract from previous implementations' functionality.  Because of this, we
-decided it was fair to add to our interface as any theoretical client would not be negatively
-impacted, they would simply have unknowing access to even more functionality.
+We decided to design our code for earlier stage of this project such that instead of extending or
+implementing new Model implementations to add functionality, we instead added them to our IModel
+interface.  Our justification for this is that while these methods were used to reduce code
+duplication in old code, they do not limit or detract from previous implementations' functionality.
+Because of this, we decided it was fair to add to our interface as any theoretical client would not
+be negatively impacted, they would simply have unknowing access to even more functionality.
 
 
 IMAGE FILE CITATIONS:

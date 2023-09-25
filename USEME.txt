@@ -1,5 +1,3 @@
-UPDATED USEME FOR ASSIGNMENT 6
-
 USEME VERSION 3.0.0:
     HOW TO: load
         - navigate to the section of the GUI titled "How would you like to process this image?"
@@ -74,8 +72,6 @@ functions include:
     - blur image-name dest-image-name
     - sharpen image-name dest-image-name
     - menu
-
-All commands asked of us in the assignment are supported in this program.
 
 Before any other commands are typed, you will need to use the load command to load image types into
 the program, stored under the 'image-name' within.  Once this is completed accurately, you can
