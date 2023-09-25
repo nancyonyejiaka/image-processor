@@ -1,0 +1,130 @@
+UPDATED USEME FOR ASSIGNMENT 6
+
+USEME VERSION 3.0.0:
+    HOW TO: load
+        - navigate to the section of the GUI titled "How would you like to process this image?"
+        - navigate to the section titled "Choose a new image to edit or save your current image:"
+        - click the "Load" button
+        - in the file opener pop-up menu, navigate to the directory that the desired is saved to
+        - in the file opener pop-up menu, click the image you would like to open
+        - double-click the file or click the "Open" button in the bottom right corner of the pop-up
+
+    After the file has been opened, it may take a few seconds for the image load onto the program,
+    especially for larger images. Once the image has been loaded onto the program, the image will
+    be displayed directly under the "Currently editing this image: " header, to the left of the
+    section title "Color Distribution Histogram". If the dimensions of the image are too big to
+    fit in the designated area, the user may use horizontal and vertical scroll bars.
+
+
+    HOW TO: save
+        - navigate to the section of the GUI titled "How would you like to process this image?"
+        - navigate to the section titled "Choose a new image to edit or save your current image:"
+        - click the "Save" button
+        - in the file opener pop-up menu, navigate to the direction that you would like to save
+          your image to
+        - in the text box labeled "Save As: " at the top of the file opener pop-up menu, specify
+          a file path and file extension (either .jpg, .png, .bmp, or .ppm) that you would like to
+          save the image under
+        - click the "Save" button in the bottom right corner of the pop-up
+
+
+    HOW TO: apply image modification command (not brighten or darken)
+        - load in an image, such that it appears in the editing window (instructions given above)
+        - navigate down to the section of the GUI titled
+          "What effects would you like to add to your current image:"
+        - press the button that corresponds to the effect you would like to apply
+
+
+    HOW TO: brighten or darken
+        - load in an image, such that it appears in the editing window (instructions given above)
+        - navigate down to the section of the GUI titled
+          "What effects would you like to add to your current image:"
+        - enter a valid integer (negative or positive) into the text box, then press the
+          'brighten' button if you wish to brighten the image or the 'darken' button if you wish
+          to darken the image
+
+
+    HOW TO: select a histogram view to display
+        - load in an image, such that it appears in the editing window (instructions given above)
+        - the program will default to showing you the histogram for all color component data
+        - in the selection of buttons underneath the histogram, select the graph you wish to view
+
+
+    HOW TO: use provided JAR file
+        - if you wish to open the GUI from the JAR file, simply double click the file to open the
+          no argument version of instantiating the program.  This will open the GUI version.
+
+USEME VERSION 1.0.0:
+
+This program supports a variety of image processing and enhancement commands. The current support
+functions include:
+    - load image-path image-name
+    - save image-path image-name
+    - brighten increment image-name dest-image-name
+    - horizontal-flip image-name dest-image-name
+    - vertical-flip image-name dest-image-name
+    - red-component image-name dest-image-name
+    - blue-component image-name dest-image-name
+    - green-component image-name dest-image-name
+    - value-component image-name dest-image-name
+    - luma-component image-name dest-image-name
+    - intensity-component image-name dest-image-name
+    - sepia image-name dest-image-name
+    - greyscale image-name dest-image-name
+    - blur image-name dest-image-name
+    - sharpen image-name dest-image-name
+    - menu
+
+All commands asked of us in the assignment are supported in this program.
+
+Before any other commands are typed, you will need to use the load command to load image types into
+the program, stored under the 'image-name' within.  Once this is completed accurately, you can
+proceed to use any of the other commands to create new images within the program that copy and then
+modify what's been loaded in.  None of the modification commands need to be typed in any order,
+though when wishing to save a finished image, all modifications must be complete before saving
+the image data stored at the 'image-name' to the provided file path, else the changes will not save.
+Saved files can be of any supported image type - i.e., .ppm, .jpg, .bmp, or .png.  These can be
+loaded in to the program from any source, and output as any source too.
+
+It is possible to pass a text file in via the command line to run our program.  This must be done
+by editing the given run configuration, and passing in as the argument "-file name-of-script.txt"
+where name-of-script is replaced in the name of the txt file you would like the program to read
+scripts from.  One consideration you need to make is that unless your text file is within the
+exact scope of the main class, you need to provide more information than name-of-script.txt.  You
+would to provide the path as well.  In other words, the text file that the program will read
+scripts from must be contained in the dominating project folder (in this case IME) and no other
+directories. If the text file is located in director or package within the dominating project file,
+the contain root file path must be specified.
+
+For example, say we have a file menu-script.txt, that we would like this program to read from. If
+we place the menu-script.txt file only in the IME project folder and no other directories, we can
+create a new run configuration with the command line arguments as "-file menu-script.txt", and the
+program will successfully read the scripts in the menu-script.txt then exit the program.
+
+If the menu-script.txt is placed within the src director in the IME project folder, we would need
+to create a new run configuration with the command line arguments as "-file src/menu-script.txt".
+
+The same applies to the use of the JAR file in the terminal. If the file source for the scripts is
+in the same location as the jar file, then the path name does not need to be specified. For
+example, if the JAR file and the script text file are both on your desktop, the file path for the
+script text file does not need to be specified. Otherwise, the file path for the script text file
+must be specified.
+
+
+EXAMPLES OF SCRIPTS
+Enter these when running ImageProcessor or Jar file to use commands.
+
+"load src/cs3500/imageprocessing/res/Square.ppm square3x3
+red-component square3x3 red3x3
+horizontal-flip red3x3 red3x3horiz
+vertical-flip red3x3horiz
+red3x3vert brighten 20 red3x3vert red3x3bright
+save src/cs3500/imageprocessing/res/sqrredflip.ppm red3x3bright"
+
+In this example, load is called first.  Then, all the modifications are applied.  Finally, save is
+called on the most modified image and saved to the given filepath.
+
+"load src/cs3500/imageprocessing/res/small-sammie-submit.png sandwich
+blur sandwich sandwichBlurred
+sepia sandwichBlurred sandywichBlurred
+save src/cs3500/imageprocessing/res/finalSandwich.bmp sandywichBlurred"

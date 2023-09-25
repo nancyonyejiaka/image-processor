@@ -1,0 +1,19 @@
+load src/cs3500/imageprocessing/res/small-sammie-submit.png sandwich
+brighten 20 sandwich sandwichBright
+brighten -10 sandwichBright sandwichDark
+blur sandwichDark sandwichBlur
+sharpen sandwichBlur sandwichSharp
+horizontal-flip sandwichSharp sandwichHorz
+vertical-flip sandwichHorz sandwichVert
+sepia sandwichVert sandwichSep
+greyscale sandwichSep sandwichGrey
+intensity-component sandwichGrey sandwichIntense
+luma-component sandwichIntense sandwichLuma
+blue-component sandwichLuma sandwichBlue
+green-component sandwichBlue sandwichGreen
+red-component sandwichGreen sandwichRed
+value-component sandwichRed sandwichFinal
+save src/cs3500/imageprocessing/res/all-scripts-sammie.png sandwichFinal
+save src/cs3500/imageprocessing/res/all-scripts-sammie.jpg sandwichFinal
+save src/cs3500/imageprocessing/res/all-scripts-sammie.bmp sandwichFinal
+save src/cs3500/imageprocessing/res/all-scripts-sammie.ppm sandwichFinal
