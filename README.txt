@@ -1,6 +1,6 @@
 IMAGE PROCESSOR
 PIXELDATA[HEIGHT][WIDTH]
-Designed and implemented by Duncan Mayer and Nancy Onyejiaka.
+Designed and implemented by Nancy Onyejiaka and Duncan Mayer.
 
 
 IMPLEMENTATION DETAILS VERSION 3.0.0:
