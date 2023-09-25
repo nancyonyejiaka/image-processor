@@ -1,8 +1,6 @@
 package cs3500.imageprocessing.view;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.Dimension;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
 
@@ -48,6 +46,7 @@ public class PixelHistogram {
         max = data.get(i);
       }
     }
+//    System.out.print("\n\n this is the max of the function: " + max + "\n\n");
 
 
     Dimension dimens = new Dimension(255, 384);
@@ -89,6 +88,8 @@ public class PixelHistogram {
 
       double ratio2 = data.get(j) / max;
       int y2 = (int) (ratio2 * dimens.height);
+//      System.out.print("\n starting coordinate: (" + (x - 1) + "," + y1 + ")\n");
+//      System.out.print("\n ending coordinate: (" + (x) + "," + y2 + ")\n");
 
       g.drawLine(x - 1, (dimens.height + 1) - y1, x, (dimens.height + 1) - y2);
       x += (int) (dimens.getWidth() / 255);

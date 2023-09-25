@@ -43,6 +43,8 @@ public class IMEView extends JFrame implements IView {
   private JLabel fileSaveDisplay;
   private JPanel commandPanel;
   private JTextField input;
+  private JTextField width;
+  private JTextField height;
   private JButton horizontal;
   private JButton vertical;
   private JButton redComp;
@@ -57,6 +59,7 @@ public class IMEView extends JFrame implements IView {
   private JButton sharpen;
   private JButton brighten;
   private JButton darken;
+  private JButton downscale;
   private JButton fileOpenButton;
   private JButton fileSaveButton;
   private JButton intensityData;
@@ -132,6 +135,32 @@ public class IMEView extends JFrame implements IView {
     return incr;
   }
 
+  @Override
+  public int getDownsizeWidth() {
+    int incr = 0;
+    try {
+      incr = Integer.parseInt(this.width.getText());
+    } catch (NumberFormatException e) {
+      this.showWarning("Invalid Width", "Please re-enter the width.");
+    }
+    this.width.setText("");
+    resetFocus();
+    return incr;
+  }
+
+  @Override
+  public int getDownsizeHeight() {
+    int incr = 0;
+    try {
+      incr = Integer.parseInt(this.height.getText());
+    } catch (NumberFormatException e) {
+      this.showWarning("Invalid Height", "Please re-enter the height.");
+    }
+    this.height.setText("");
+    resetFocus();
+    return incr;
+  }
+
   /**
    * Clear the increment text box.
    */
@@ -160,6 +189,7 @@ public class IMEView extends JFrame implements IView {
     this.sharpen.addActionListener(evt -> features.apply("sharpen"));
     this.brighten.addActionListener(evt -> features.apply("brighten"));
     this.darken.addActionListener(evt -> features.apply("darken"));
+    this.downscale.addActionListener(evt -> features.apply("downscale"));
 
     // these lambdas are more involved than simple method calls.
     fileOpenButton.addActionListener(evt -> {
@@ -237,7 +267,7 @@ public class IMEView extends JFrame implements IView {
 
 
   /**
-   * Helper method to display an error message to the user.
+   * Helper method to display an error message to the user
    *
    * @param title   The title of the error box.
    * @param message The message within the error box.
@@ -253,6 +283,7 @@ public class IMEView extends JFrame implements IView {
    */
   private void configureMainPanel() {
     this.mainPanel = new JPanel();
+//    this.mainPanel.setMaximumSize(new Dimension(this.screenWidth, this.screenHeight));
     this.mainPanel.setLayout(new BoxLayout(this.mainPanel, BoxLayout.PAGE_AXIS));
     JScrollPane mainScrollPane = new JScrollPane(this.mainPanel);
     mainScrollPane.getVerticalScrollBar().setUnitIncrement(16);
@@ -294,11 +325,14 @@ public class IMEView extends JFrame implements IView {
     imagePanel.add(this.histPanel);
 
     this.histLabel = new JLabel();
+//    JScrollPane histScroll = new JScrollPane(this.histLabel);
 
     this.histLabel.setIcon(new ImageIcon());
+//    histScroll.getHorizontalScrollBar().setUnitIncrement(16);
     this.histLabel.setPreferredSize(new Dimension((screenWidth * 7),
             screenHeight / 2));
 
+//    histLabel.add(histScroll);
     this.histLabel.setHorizontalAlignment(SwingConstants.LEFT);
   }
 
@@ -368,6 +402,18 @@ public class IMEView extends JFrame implements IView {
     JLabel increment = new JLabel("increment: ");
 
 
+    JPanel downscalePanel = new JPanel();
+    downscalePanel.setLayout(new FlowLayout());
+    JLabel wxh = new JLabel("width and height: ");
+    downscalePanel.add(wxh);
+    this.width = new JTextField(10);
+    this.height = new JTextField(10);
+    downscalePanel.add(this.width);
+    downscalePanel.add(this.height);
+    this.downscale = new JButton("downscale");
+
+
+
     brightenPanel.add(increment);
 
     input = new JTextField(10);
@@ -405,6 +451,7 @@ public class IMEView extends JFrame implements IView {
     this.sharpen = new JButton("sharpen");
     this.sharpen.setActionCommand("sharpen");
 
+
     commandPanel.add(this.blur);
     commandPanel.add(this.sepia);
     commandPanel.add(this.sharpen);
@@ -418,11 +465,14 @@ public class IMEView extends JFrame implements IView {
     commandPanel.add(this.intensityComp);
 
     commandPanel.add(this.greyScale);
+    commandPanel.add(this.downscale);
 
 
+    commandPanel.add(downscalePanel);
     commandPanel.add(this.horizontal);
     commandPanel.add(this.vertical);
     commandPanel.add(brightenPanel);
+
 
   }
 

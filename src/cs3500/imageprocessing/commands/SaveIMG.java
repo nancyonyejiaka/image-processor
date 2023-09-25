@@ -34,7 +34,7 @@ public class SaveIMG extends ASave {
     String imgType = pathName.substring(pathLength - 3, pathLength).toLowerCase();
     String jpeg = pathName.substring(pathLength - 4, pathLength).toLowerCase();
     if (imgType.equals("ppm")) {
-      savePPM(model);
+        savePPM(model);
     } else {
       if (!model.hasImage(keyName)) {
         System.out.print("\nNo file by that name!\n");
@@ -54,12 +54,6 @@ public class SaveIMG extends ASave {
     }
   }
 
-  /**
-   * Saves a PPM image using the specific implementation needed to save a PPM image file.  This
-   * implementation uses a scanner, as PPM is not a supported BufferedImage type.
-   *
-   * @param model The image storage unit that the PPM image data will be added to.
-   */
   public void savePPM(IModel model) {
     // needs to be get or Default if your filename isn't in hashmap
     if (!model.hasImage(keyName)) {

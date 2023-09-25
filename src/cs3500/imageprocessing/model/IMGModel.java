@@ -210,15 +210,7 @@ public class IMGModel implements IModel {
     this.storage.put(newName, mod);
   }
 
-  /**
-   * Generates the Hashmap Array that represents the four distinct datatypes used to construct
-   * Histograms in the view.  These types are the red, green, and blue components, as well as
-   * intensity.
-   * @param keyName The keyName of the image analyzed for data.
-   * @return A Hashmap Array with a complete suite of Histogram data.
-   * @throws IllegalArgumentException when given a null key name
-   */
-  public HashMap<Integer, Integer>[] generateHistogramData(String keyName)
+  public HashMap<Integer, Integer>[] generateHistogramData (String keyName)
           throws IllegalArgumentException {
     HashMap<Integer, Integer> redPixels = new HashMap<>();
     HashMap<Integer, Integer> greenPixels = new HashMap<>();

@@ -12,6 +12,7 @@ import java.util.Scanner;
 import java.util.function.Function;
 
 import cs3500.imageprocessing.commands.Brighten;
+import cs3500.imageprocessing.commands.DownScale;
 import cs3500.imageprocessing.commands.Filter;
 import cs3500.imageprocessing.commands.HorizontalFlip;
 import cs3500.imageprocessing.commands.ImageProcessingCommand;
@@ -153,6 +154,8 @@ public class Controller implements IController {
     commandMap.put("greyscale", (Scanner s) -> new Transform(s.next(), s.next(), "greyscale"));
     commandMap.put("blur", (Scanner s) -> new Filter(s.next(), s.next(), "blur"));
     commandMap.put("sharpen", (Scanner s) -> new Filter(s.next(), s.next(), "sharpen"));
+    commandMap.put("downscale", (Scanner s) -> new DownScale(s.nextInt(), s.nextInt(),
+            s.next(), s.next()));
   }
 
   /**
@@ -201,6 +204,8 @@ public class Controller implements IController {
     writeMessage("☆ blur image-name dest-image-name "
             + System.lineSeparator());
     writeMessage("☆ sharpen image-name dest-image-name "
+            + System.lineSeparator());
+    writeMessage("☆ downscale new-width new-height image-name dest-image-name "
             + System.lineSeparator());
     writeMessage("☆ menu (print supported instruction list)"
             + System.lineSeparator());
