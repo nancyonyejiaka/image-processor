@@ -5,7 +5,7 @@ Image Processor is a sophisticated GUI-based application designed for efficient 
 
 ### Key Features
 - **Intuitive Interface**: Divided into image display, save/load, and command panels for seamless user interaction.
-- **Advanced Image Processing Commands**: Includes horizontal and vertical flips, color component adjustments (red, green, blue, luma, value, intensity), blur, sharpen, sepia, and brightness control.
+- **Advanced Image Processing Commands**: Includes horizontal and vertical flips, color component adjustments (red, green, blue, luma, value, intensity), blur, sharpening, sepia, and brightness control.
 - **Dynamic Histogram Display**: Shows pixel frequency distribution with options to view individual color components.
 - **File Support**: Comprehensive support for PNG, JPG, BMP, and PPM formats, with integrated save and load functionality.
 
