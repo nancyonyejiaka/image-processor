@@ -15,18 +15,6 @@ public interface IView {
   int getIncrementInt();
 
   /**
-   * Get the desired width for downscaling.
-   * @return width of new image.
-   */
-  int getDownsizeWidth();
-
-  /**
-   * Get the desired height for downscaling.
-   * @return height of new image.
-   */
-  int getDownsizeHeight();
-
-  /**
    * Clear the text field. Note that a more general "setInputString" would work for this purpose but
    * would be incorrect. This is because the text field is not set programmatically in general but
    * input by the user.
@@ -65,7 +53,7 @@ public interface IView {
   String getHistFocus();
 
   /**
-   * Display a pop-up warning
+   * Display a pop-up warning.
    * @param title The title of the pop-up box warning.
    * @param message The message contained within the pop-up box.
    */

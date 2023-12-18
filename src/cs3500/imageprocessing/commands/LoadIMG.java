@@ -68,7 +68,7 @@ public class LoadIMG extends ALoad {
           int b = rgb & 0xFF;
 
           result[i][j] = new PixelData(255, r, g, b);
-//          System.out.print(result[i][j].toString());
+          System.out.print(result[i][j].toString());
         }
       }
       model.addImage(keyName, result);

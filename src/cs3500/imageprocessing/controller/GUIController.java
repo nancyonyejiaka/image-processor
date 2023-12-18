@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import cs3500.imageprocessing.commands.Brighten;
-import cs3500.imageprocessing.commands.DownScale;
 import cs3500.imageprocessing.commands.Filter;
 import cs3500.imageprocessing.commands.HorizontalFlip;
 import cs3500.imageprocessing.commands.ImageProcessingCommand;
@@ -81,8 +80,6 @@ public class GUIController implements Features {
     this.buttonActionMap.put("darken", (String s) ->
             new Brighten(-1 * this.view.getIncrementInt(), s, s));
 
-    this.buttonActionMap.put("downscale", (String s) ->
-            new DownScale(this.view.getDownsizeWidth(), this.view.getDownsizeHeight(), s, s));
   }
 
   /**
@@ -104,6 +101,7 @@ public class GUIController implements Features {
    */
   public void setFilePath(String filePath) {
     this.filePath = filePath;
+    this.keyName = filePath;
   }
 
   /**
@@ -113,8 +111,7 @@ public class GUIController implements Features {
    */
   @Override
   public void loadIMG(String filePath) {
-    this.filePath = filePath;
-    this.keyName = filePath;
+    setFilePath(filePath);
     try {
       new LoadIMG(filePath, keyName).run(model);
       this.view.updateMainImage(model.generateIMG(this.filePath, new StringBuilder()));

@@ -99,7 +99,7 @@ public interface IModel {
    * @return The data Array of Hashmaps.
    * @throws IllegalArgumentException if the keyName is invalid.
    */
-  HashMap<Integer, Integer>[] generateHistogramData (String keyName)
+  HashMap<Integer, Integer>[] generateHistogramData(String keyName)
           throws IllegalArgumentException;
 
   /**

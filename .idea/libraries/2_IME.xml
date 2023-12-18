@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="2.IME">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/cs3500/imageprocessing/res/2.IME.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="IME">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/DownScaleVersion_jar/IME.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
