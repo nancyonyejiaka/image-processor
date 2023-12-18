@@ -1,7 +1,7 @@
 # Image Processor
 
 ## Overview
-Image Processor is a sophisticated GUI-based application designed for efficient image manipulation and analysis. This tool stands out for its user-friendly interface, comprehensive image processing commands, and robust histogram display features. 
+Image Processor is a GUI-based application designed for efficient image manipulation and analysis. This tool stands out for its user-friendly interface, comprehensive image processing commands, and robust histogram display features. 
 
 ### Key Features
 - **Intuitive Interface**: Divided into image display, save/load, and command panels for seamless user interaction.
