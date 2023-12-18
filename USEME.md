@@ -53,17 +53,21 @@
 
 ### Script Examples
 # Example 1
+```
 load src/cs3500/imageprocessing/res/Square.ppm square3x3
 red-component square3x3 red3x3
 horizontal-flip red3x3 red3x3horiz
 vertical-flip red3x3horiz red3x3vert
 brighten 20 red3x3vert red3x3bright
 save src/cs3500/imageprocessing/res/sqrredflip.ppm red3x3bright
+```
 
 # Example 2
+```
 load src/cs3500/imageprocessing/res/small-sammie-submit.png sandwich
 blur sandwich sandwichBlurred
 sepia sandwichBlurred sandywichBlurred
 save src/cs3500/imageprocessing/res/finalSandwich.bmp sandywichBlurred
+```
 
 In these examples, images are loaded, modified, and saved using the specified paths and commands.
